@@ -1,0 +1,3 @@
+decibel.py is PUBLIC DOMAIN software.  
+
+do whatever you want.
