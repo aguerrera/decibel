@@ -11,7 +11,7 @@ import datetime
 import unittest
 import uuid
 
-from hapn.core import decibel 
+import decibel 
 
 _connectionString = "dbname='testdb' user='postgres' host='localhost' password='hey-there-you-dude'"
 
