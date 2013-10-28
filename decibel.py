@@ -5,6 +5,8 @@
 # copyright andy guerrera
 # public domain license
 
+
+
 import psycopg2
 import psycopg2.extras
 import datetime
@@ -89,10 +91,10 @@ class Decibel(object):
 
     has_conn = False
     conn = None
-    dsn = None
+    connectionString = None
 
-    def __init__(self, dsn=None, conn=None):
-        self.dsn = dsn
+    def __init__(self, connectionString=None, conn=None):
+        self.connectionString = connectionString
         if conn:
             self.conn = conn
             self.has_conn = True
@@ -105,10 +107,10 @@ class Decibel(object):
         self.conn = conn
 
     def get_conn(self):
-        if not self.conn and not self.dsn:
+        if not self.conn and not self.connectionString:
             return None
         if not self.conn:
-            self.conn = psycopg2.connect(self.dsn)
+            self.conn = psycopg2.connect(self.connectionString)
         self.has_conn = True
         return self.conn
 
